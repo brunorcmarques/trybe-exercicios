@@ -80,6 +80,35 @@ if (todosAngulosPositivos) {
 // Como dica, você pode pesquisar uma função que faz uma string ficar com todas as letras minúsculas (lower case).
 // Se a peça passada for inválida, o programa deve retornar uma mensagem de erro.
 // Exemplo: bishop (bispo) -> diagonals (diagonais)
+
+
+const chessPiece = 'bispo';
+
+switch (chessPiece.toLowerCase()) {
+    case 'rei':
+      console.log('Rei-> Uma casa apenas para qualquer direção.');
+      break;
+    case 'bispo':
+      console.log('Bispo-> Diagonal.');
+      break;
+    case 'rainha':
+      console.log('Rainha-> Diagonal, horizontal e vertical.');
+      break;
+    case 'cavalo':
+      console.log('Cavalo -> "L" pode pular sobre as peças.');
+      break;
+    case 'torre':
+      console.log('Torre -> Horizontal e vertical.');
+      break;
+    case 'peão':
+      console.log("Peão -> Apenas uma casa para frente, no primeiro movimento podem ser duas casas.");
+      break;
+    default:
+      console.log('Erro, peça inválida!');
+      break;
+  };
+
+
 // Escreva um programa que converte uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga essas regras:
 // Porcentagem >= 90 -> A
 // Porcentagem >= 80 -> B
@@ -88,8 +117,38 @@ if (todosAngulosPositivos) {
 // Porcentagem >= 50 -> E
 // Porcentagem < 50 -> F
 // O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
+
+const grade = 76;
+
+if (grade < 0 || grade > 100) {
+  console.log("Erro, nota incorreta!");
+} else if (grade >= 90) {
+  console.log("A");
+} else if (grade >= 80) {
+  console.log("B");
+} else if (grade >= 70) {
+  console.log("C");
+} else if (grade >= 60) {
+  console.log("D");
+} else if (grade >= 50) {
+  console.log("E");
+} else {
+  console.log("F");
+}
+
 // 🚀 Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false.
 // Bonus: use somente um if.
+
+const num1 = 11
+const num2 = 23
+const num3 = 43
+
+if ((num1 % 2 == 0) || (num2 % 2 == 0) || (num3 % 2 == 0)) {
+    console.log("true")
+} else {
+    console.log("false")
+}
+
 // Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for ímpar. Caso contrário, ele retorna false.
 // Bonus: use somente um if.
 // Escreva um programa que se inicie com dois valores em duas constantes diferentes: o custo de um produto e seu valor de venda. A partir dos valores, calcule quanto de lucro (valor de venda descontado o custo do produto) a empresa terá ao vender mil desses produtos.
