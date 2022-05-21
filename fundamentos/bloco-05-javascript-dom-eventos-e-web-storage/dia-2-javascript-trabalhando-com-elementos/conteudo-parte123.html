@@ -20,6 +20,8 @@
       <section id="quartoEUltimoFilho"></section>
     </section>
   <script>
+
+// Parte 1
 // Acesse o elemento elementoOndeVoceEsta.
   document.querySelector('#elementoOndeVoceEsta')
 // Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
@@ -36,6 +38,38 @@
   document.getElementById('elementoOndeVoceEsta').nextSibling.nextSibling
 // Agora acesse o terceiroFilho a partir de pai.
   document.getElementById('pai').childNodes[5]
+
+  // Parte 2
+  // Crie um irmão para elementoOndeVoceEsta.
+  const pai = document.getElementById('pai');
+  const irmaoDoElementoOndeVcEsta = document.createElement('section');
+  irmaoDoElementoOndeVcEsta.id = 'irmaoDoElementoOndeVcEsta';
+  pai.appendChild(irmaoDoElementoOndeVcEsta);
+  // Crie um filho para elementoOndeVoceEsta.
+  const elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
+  const filhoDoElementoOndeVcEsta = document.createElement('section');
+  filhoDoElementoOndeVcEsta.id = 'filhoDoElementoOndeVcEsta'
+  elementoOndeVoceEsta.appendChild(filhoDoElementoOndeVcEsta);  
+  // Crie um filho para primeiroFilhoDoFilho.
+  const primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho');
+  const filhoDoPrimeiroFilhoDoFilho = document.createElement('script');
+  filhoDoPrimeiroFilhoDoFilho.id = 'filhoDoPrimeiroFilhoDoFilho';
+  primeiroFilhoDoFilho.appendChild(filhoDoPrimeiroFilhoDoFilho);
+  // A partir desse filho criado, acesse terceiroFilho.
+  document.getElementById('filhoDoPrimeiroFilhoDoFilho').parentElement.parentElement.nextElementSibling
+
+  // Parte 3
+  // Remova todos os elementos filhos de paiDoPai exceto pai, elementoOndeVoceEsta e primeiroFilhoDoFilho.
+  for (let index = pai.childNodes.length - 1; index >= 0; index -= 1) {
+      const currentChildren = pai.childNodes[index];
+      if (currentChildren.id !== 'elementoOndeVoceEsta') {
+        currentChildren.remove();
+      }
+    }
+
+    const segundoEUltimoFilhoDoFilho = document.getElementById('segundoEUltimoFilhoDoFilho');
+    segundoEUltimoFilhoDoFilho.remove();  
+
   </script>
     </main>
     
