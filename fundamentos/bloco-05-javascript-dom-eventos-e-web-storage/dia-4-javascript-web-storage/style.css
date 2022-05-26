@@ -1,0 +1,58 @@
+* {
+    margin:0;
+}
+
+body {
+    background-color: green;
+}
+
+.top-container {
+    height: 70px;
+    background-color: rgb(253, 255, 240);   
+}
+
+.middle-container {
+    display: inline-block;
+}
+
+.left-container {
+    float: left;
+    left: 0;
+    width: 10%;
+    height: 200px;
+    background-color: rgb(253, 255, 240);   
+}
+
+.screen-container {
+    float: left;
+    width: 76%;
+    padding: 2%;
+}
+
+.right-container {
+    float: right;
+    right: 0;
+    width: 10%;
+    height: 200px;
+    background-color: rgb(253, 255, 240);   
+}
+
+.botton-container {
+    height: 100px;
+    background-color: rgb(253, 255, 240);
+}
+
+.power-btn {
+    justify-content: flex-end;
+    display: flex;
+}
+
+button {
+    color: red;
+    background: red;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin: 30px 30px;
+}
