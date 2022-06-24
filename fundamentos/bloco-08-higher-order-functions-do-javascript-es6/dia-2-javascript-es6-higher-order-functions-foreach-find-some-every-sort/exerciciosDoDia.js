@@ -143,16 +143,23 @@ function smallerName() {
 
   const expectedResult4 = false;
 
+  // function authorUnique(array) {
+  //   let unique = true;
+  //   for (let i = 0; i < array.length; i += 1) {
+  //     for (let i2 = 0; i < array.length; i += 1) {
+  //       if (array[i].author.birthYear === array[i2].author.birthYear) {
+  //         unique = false;
+  //       }
+  //     }
+  //   }
+  //   return unique;
+  // }
+
+
   function authorUnique(array) {
-    let unique = true;
-    for (let i = 0; i < array.length; i += 1) {
-      for (let i2 = 0; i < array.length; i += 1) {
-        if (array[i].author.birthYear === array[i2].author.birthYear) {
-          unique = false;
-        }
-      }
-    }
-    return unique;
+    return array.every((autor) => array.some((autor2) => 
+    autor.author.birthYear === autor2.author.birthYear 
+    && autor.author.name !== autor2.author.name))
   }
 
   console.log(authorUnique(books));
