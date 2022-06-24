@@ -158,4 +158,84 @@ function fantasyOrScienceFiction() {
   return books.filter((book) => book.genre === 'Fantasia' || book.genre === 'Ficção Científica');
 }
 
-console.log(fantasyOrScienceFiction);
+console.log(fantasyOrScienceFiction())
+
+
+// 🚀 4 - Crie um array ordenado pelos livros com mais de 60 anos de publicação e ordene-o pelo livro mais velho.
+// Dica: use as funções filter e sort
+
+const expectedResult4 = [
+  {
+    id: 6,
+    name: 'O Chamado de Cthulhu',
+    genre: 'Terror',
+    author: { name: 'H. P. Lovecraft', birthYear: 1890 },
+    releaseYear: 1928,
+  },
+  {
+    id: 3,
+    name: 'Fundação',
+    genre: 'Ficção Científica',
+    author: { name: 'Isaac Asimov', birthYear: 1920 },
+    releaseYear: 1951,
+  },
+  {
+    id: 2,
+    name: 'O Senhor dos Anéis',
+    genre: 'Fantasia',
+    author: { name: 'J. R. R. Tolkien', birthYear: 1892 },
+    releaseYear: 1954,
+  },
+];
+
+function oldBooksOrdered() {
+
+  return books.filter((book) => book.releaseYear < 1962)
+  .sort((bookA, bookB) => bookA.releaseYear - bookB.releaseYear)
+};
+
+console.log(oldBooksOrdered())
+
+// 🚀 5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
+
+const expectedResult5 = [
+  'Frank Herbert',
+  'George R. R. Martin',
+  'Isaac Asimov',
+  'J. R. R. Tolkien',
+];
+
+function fantasyOrScienceFictionAuthors() {
+  return books.filter((book) => book.genre === 'Fantasia' || book.genre === 'Ficção Científica').map((author) => author.author.name).sort()
+}
+
+console.log(fantasyOrScienceFictionAuthors())
+
+// 🚀 6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
+
+const expectedResult6 = [
+  'O Senhor dos Anéis',
+  'Fundação',
+  'O Chamado de Cthulhu',
+];
+
+function oldBooks() {
+  return books
+    .filter((book) => book.releaseYear < 1962)
+    .map((book) => book.name);
+}
+
+console.log(oldBooks());
+
+// 🚀 7 - Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais.
+// Dica: cada inicial termina com um ponto.
+
+const expectedResult7 = 'O Senhor dos Anéis';
+
+function authorWith3DotsOnName() {
+    return books.filter((book) => (
+      book.author.name[1] === '.'
+      && book.author.name[4] === '.'
+      && book.author.name[7] === '.'
+    ))[0].name;
+}
